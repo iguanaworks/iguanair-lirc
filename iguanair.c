@@ -337,7 +337,7 @@ static lirc_t readdata(lirc_t timeout)
 }
 
 const struct driver hw_iguanaIR = {
-	.name		= "iguanaIR",
+	.name		= "iguanair",
 	.device		= "0",
 	.features	= LIRC_CAN_REC_MODE2 | \
 			  LIRC_CAN_SEND_PULSE | \

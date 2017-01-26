@@ -8,7 +8,7 @@
 #
 
 
-driver          = iguanaIR
+driver          = iguanair
 
 all:  $(driver).so
 
