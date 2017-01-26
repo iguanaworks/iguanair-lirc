@@ -22,7 +22,7 @@ To build and install the driver together with the support files:
 Verifying the driver after make install:
 
      $ lirc-lsplugins -q iguanair
-     ---   /usr/lib64/lirc/plugins/iguanair.so
+     iguanair            -as-  /usr/lib64/lirc/plugins/iguanair.so
 
 You could also find the driver docs in the manual. The path varies, but
 in a packaged version typically /usr/share/doc/lirc/lirc.org/html/index.html.
