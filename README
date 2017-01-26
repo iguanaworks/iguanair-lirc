@@ -11,7 +11,7 @@ As a transition step the same files are available here during the 0.9.4
 cycle. These files are a complete lirc driver for iguanair. Building requires
 lirc >= 0.9.4. If you are using a packaged version you probably need to
 have the -devel and -doc packages installed. Note that the downstream
-sources at https://github.com/iguanaworks/iguanair-lirc  are preferred and 
+sources at https://github.com/iguanaworks/iguanair-lirc  are preferred and
 will be the only option in next release.
 
 To build and install the driver together with the support files:
