@@ -4,21 +4,28 @@
 # particular that the /usr/lib[64]/pkgconfig/lirc-driver.pc
 # is in place (/usr/local/lib/pkgconfig/... is also OK).
 #
+# The doc installation needs to be completed, typically as root
+# using something like
+#
+#     # cd $(pkg-config --variable=plugindocs lirc-driver); make
+#
+# This updates the list of installed plugins in /var/lib/lirc,
+# which is included from the main docs.
 
 
 driver          = iguanair
 
 all:  $(driver).so
 
+LDFLAGS         += -liguanaIR -L../software/usb_ir/build
+MODPROBE_CONF   = 60-blacklist-kernel-iguanair.conf
+
+
 CFLAGS          += $(shell pkg-config --cflags lirc-driver)
 LDFLAGS         += $(shell pkg-config --libs lirc-driver)
 PLUGINDIR       ?= $(shell pkg-config --variable=plugindir lirc-driver)
 CONFIGDIR       ?= $(shell pkg-config --variable=configdir lirc-driver)
 PLUGINDOCS      ?= $(shell pkg-config --variable=plugindocs lirc-driver)
-
-MODPROBE_CONF   = 60-blacklist-kernel-iguanair.conf
-
-LDFLAGS         += -liguanaIR
 
 $(driver).o: $(driver).c
 
